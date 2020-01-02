@@ -1,0 +1,32 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+      "target": "es6",
+      "module": "esnext",
+      "sourceMap": true,
+      "skipLibCheck": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "allowUnreachableCode": true,
+      "moduleResolution": "node",
+      "noStrictGenericChecks": true,
+      "noImplicitAny": false,
+      "allowJs": false,
+      "noUnusedLocals": true,
+      "typeRoots": ["node_modules/@types", "@types"],
+      "jsx": "react",
+      "lib": ["dom", "es5", "es2015", "es6", "es7", "es2017.object"],
+      "baseUrl": "app",
+      "paths": {
+        "react": ["node_modules/@types/react"]
+      }
+    },
+    "awesomeTypescriptLoaderOptions": {
+      "useCache": true,
+      "useWebpackText": true,
+      "forkChecker": true,
+      "ignoreDiagnostics": [6077]
+    }
+  }
+  
