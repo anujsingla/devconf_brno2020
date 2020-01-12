@@ -12,21 +12,20 @@ module.exports = ({ mode = 'production', presets = [] }) => {
         entry: './src/index.tsx',
         mode,
         module: {
-            rules: [{
-                test: /\.jpe?g$/,
-                use: [
-                  {
-                    loader: "url-loader",
-                    options: {
-                      limit: 5000
-                    }
-                  }
-                ]
-              },
+            rules: [
               {
                 test: /\.(ts|tsx)$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
+              },
+              {
+                test: /\.(png|jpg|gif)$/i,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8192 // in bytes
+                    }
+                }]
               },
               { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
             ]
