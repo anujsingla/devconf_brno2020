@@ -3,12 +3,11 @@ import './App.css';
 // @ts-ignore
 import logo from '../images/edit.png';
 import { Button } from 'react-bootstrap';
+// tree-shaking we only used 1 function so webpack not includes cube method
+import { square } from './mathUtility';
 // magic commnet
-// const LoadImage = React.lazy(() => import(/* webpackChunkName: 'LoadImage', webpackPrefetch: true */ './LoadImage'));
-// const Footer = React.lazy(() => import(/* webpackChunkName: 'Footer', webpackPrefetch: true */ './Footer'));
-
-const LoadImage = React.lazy(() => import('./LoadImage'));
-const Footer = React.lazy(() => import('./Footer'));
+const LoadImage = React.lazy(() => import(/* webpackChunkName: 'LoadImage', webpackPrefetch: true */ './LoadImage'));
+const Footer = React.lazy(() => import(/* webpackChunkName: 'Footer', webpackPrefetch: true */ './Footer'));
 
 
 function App() {
@@ -21,9 +20,10 @@ function App() {
     return (
         <div className="App">
             <header>
-                <p> Webpack examples </p>
+                <h1 className="mb-5"> Webpack examples </h1>
             </header>
-            <Button onClick={loadFooter} variant="primary" className="mb-4">Load Footer</Button>
+            <h2> Square of five: {square(5)} </h2>
+            <Button onClick={loadFooter} variant="primary" className="mb-4 mr-4">Load Footer</Button>
             <Button onClick={loadImage} variant="primary" className="mb-4">Load Image</Button>
             {showImage && (
                 <Suspense fallback={<div>Loading...</div>}>

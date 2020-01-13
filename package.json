@@ -1,5 +1,6 @@
 {
   "name": "webpack_devconf2020",
+  "sideEffects": false,
   "version": "1.0.0",
   "description": "learning webpack feature and performance",
   "main": "index.js",
@@ -7,7 +8,8 @@
     "webpack-dev-server": "webpack-dev-server",
     "webpack": "webpack",
     "dev": "yarn run webpack-dev-server -- --env.mode development --hot",
-    "prod": "rimraf dist && yarn run webpack -- --env.mode production"
+    "prod": "rimraf dist && yarn run webpack -- --env.mode production",
+    "build": "rimraf dist && yarn run webpack -- --env.mode development"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +29,7 @@
     "rimraf": "^3.0.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.20.3",
+    "terser-webpack-plugin": "^2.3.2",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.4",
     "url-loader": "^1.0.1",

@@ -15,7 +15,7 @@ module.exports = ({ mode = 'production', presets = [] }) => {
             rules: [
               {
                 test: /\.(ts|tsx)$/,
-                use: 'ts-loader',
+                use: ['ts-loader'],
                 exclude: /node_modules/,
               },
               {
@@ -23,7 +23,7 @@ module.exports = ({ mode = 'production', presets = [] }) => {
                 use: [{
                     loader: 'url-loader',
                     options: {
-                        limit: 8192 // in bytes
+                        limit: 200 // in bytes
                     }
                 }]
               },
@@ -36,6 +36,10 @@ module.exports = ({ mode = 'production', presets = [] }) => {
             filename: "bundle.js",
             chunkFilename: "[name]-chunk.js",
             path: path.resolve(__dirname, 'dist'),
+        },
+        optimization: {
+            minimize: true
+            // usedExports: true,
         },
         plugins: [
         new HtmlWebpackPlugin({
