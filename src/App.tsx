@@ -3,8 +3,13 @@ import './App.css';
 // @ts-ignore
 import logo from '../images/edit.png';
 import { Button } from 'react-bootstrap';
+// magic commnet
+// const LoadImage = React.lazy(() => import(/* webpackChunkName: 'LoadImage', webpackPrefetch: true */ './LoadImage'));
+// const Footer = React.lazy(() => import(/* webpackChunkName: 'Footer', webpackPrefetch: true */ './Footer'));
+
 const LoadImage = React.lazy(() => import('./LoadImage'));
 const Footer = React.lazy(() => import('./Footer'));
+
 
 function App() {
     const [showFooter, setShowFooter] = useState(false);

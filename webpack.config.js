@@ -34,7 +34,7 @@ module.exports = ({ mode = 'production', presets = [] }) => {
         devtool: 'inline-source-map',
         output: {
             filename: "bundle.js",
-            chunkFilename: "[name].-chunk.js",
+            chunkFilename: "[name]-chunk.js",
             path: path.resolve(__dirname, 'dist'),
         },
         plugins: [
